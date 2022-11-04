@@ -3,7 +3,7 @@ import { supabase } from "../supabase/client";
 
 
 
-function TaskForm() {
+function TaskForm({setUsers}) {
   const [taskName, setTaskName] = useState("");
 
   const handleSubmit = async e => {
@@ -11,6 +11,8 @@ function TaskForm() {
     try {
       
       const result = await supabase.from('pacientes').insert({nombre: taskName})
+      const pacients = await supabase.from('pacientes').select('*')
+      setUsers(pacients.data)
       console.log(result);
     } catch (error) {
       console.error(error);
