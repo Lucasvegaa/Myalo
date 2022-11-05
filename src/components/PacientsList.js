@@ -22,10 +22,11 @@ export const PacientsList = ({ users, setUsers }) => {
       {users &&
         users?.map((user) => (
           <div key={user.id}>
-            <div onClick={() => { handleClick(user.id);}} >
-              Id: {user.id} - Nombre: {user.nombre}
+            <div  >
+              Id: {user.id} - Nombre: {user.nombre}    
+              <button onClick={() => { handleClick(user.id);}}> Ver perfil </button>
+              <button onClick={() => {handleDelete(user.id);}} > Eliminar</button>
             </div>
-            <button onClick={() => {handleDelete(user.id);}} > Eliminar</button>
           </div>
         ))}
     </>
