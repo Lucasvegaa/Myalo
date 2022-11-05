@@ -1,12 +1,12 @@
 import { supabase } from "../supabase/client";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import TaskForm from "../components/TaskForm";
+import TaskForm from "../components/AddPacient";
 import { PacientsList } from "../components/PacientsList";
 import { getPacientes } from "../supabase/api";
 
 function Home() {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [pacients, setPacients] = useState([]);
 
   useEffect( () => {
@@ -38,8 +38,10 @@ function Home() {
       <div>Home</div>
       <button onClick={e =>{signOut()}}>Logout</button>
       <TaskForm setUsers={setPacients}/>
-      <PacientsList users= {pacients}/>
+      <PacientsList users= {pacients} setUsers= {setPacients}/>
+
     </>
+
   );
 }
 

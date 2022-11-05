@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getPacientes } from "../supabase/api";
 import { supabase } from "../supabase/client";
 
 
@@ -10,10 +11,9 @@ function TaskForm({setUsers}) {
     e.preventDefault();
     try {
       
-      const result = await supabase.from('pacientes').insert({nombre: taskName})
-      const pacients = await supabase.from('pacientes').select('*')
-      setUsers(pacients.data)
-      console.log(result);
+      await supabase.from('pacientes').insert({nombre: taskName})
+      
+      setUsers(await getPacientes())
     } catch (error) {
       console.error(error);
     }

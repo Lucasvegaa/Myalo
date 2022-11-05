@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import ProfilePaciente from "./pages/ProfilePaciente";
 
 import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound/>} />
+        <Route path="/paciente/:userId" element={<ProfilePaciente/>}/>
       </Routes>
     </div>
   );
