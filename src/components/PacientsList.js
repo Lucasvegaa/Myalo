@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { deletePaciente, getPacientes } from "../supabase/api";
 
-export const PacientsList = ({ users, setUsers }) => {
+export const PacientsList = ({ pacients, setPacients }) => {
   const navigate = useNavigate();
 
-  const handleClick = (id) => {
-    navigate(`/paciente/${id}`);
+  const handleClick = (pacientId) => {
+    navigate(`/paciente/${pacientId}`);
   };
   
   const handleDelete = async (id) => {
     try {
       await deletePaciente(id);
-      setUsers(await getPacientes());
+      setPacients(await getPacientes());
     } catch (error) {
       console.error(error);
     }
@@ -19,13 +19,13 @@ export const PacientsList = ({ users, setUsers }) => {
 
   return (
     <>
-      {users &&
-        users?.map((user) => (
-          <div key={user.id}>
+      {pacients &&
+        pacients?.map((pacient) => (
+          <div key={pacient.id}> 
             <div  >
-              Id: {user.id} - Nombre: {user.nombre}    
-              <button onClick={() => { handleClick(user.id);}}> Ver perfil </button>
-              <button onClick={() => {handleDelete(user.id);}} > Eliminar</button>
+              Id: {pacient.id} - Nombre: {pacient.nombre}    
+              <button onClick={() => { handleClick(pacient.id);}}> Ver perfil </button>
+              <button onClick={() => {handleDelete(pacient.id);}} > Eliminar</button>
             </div>
           </div>
         ))}

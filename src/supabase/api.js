@@ -89,11 +89,20 @@ export const createHistoriaClinica = async (
     ]);
 };
 
-export const getSesionTerapia = async (profesional_id, paciente_id) => {
+// export const getSesionTerapia = async (profesional_id, paciente_id) => {
+//   const response = await supabase
+//     .from("sesion_terapia")
+//     .select("*")
+//     .eq("profesional_id", profesional_id)
+//     .eq("paciente_id", paciente_id);
+//   return response.data;
+// };
+
+export const getSesionTerapia = async ( paciente_id) => { //harcodeado
   const response = await supabase
     .from("sesion_terapia")
     .select("*")
-    .eq("profesional_id", profesional_id)
+    .eq("profesional_id", '1') //harcodeado
     .eq("paciente_id", paciente_id);
   return response.data;
 };

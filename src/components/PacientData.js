@@ -1,8 +1,9 @@
-function PacientData({ paciente }) {
+function PacientData({ pacient }) {
+
   return (
     <>
       <h2>Datos del paciente</h2>
-      <div>Nombre: {paciente ? paciente[0].nombre : ""}</div>
+      <div>Nombre: {pacient ? pacient[0].nombre : ""}</div>
     </>
   )
 }

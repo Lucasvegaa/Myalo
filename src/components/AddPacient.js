@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { getPacientes } from "../supabase/api";
-import { supabase } from "../supabase/client";
+import { createPaciente} from "../supabase/api";
+import { useNavigate } from "react-router-dom";
 
 
-
-function TaskForm({setUsers}) {
-  const [taskName, setTaskName] = useState("");
+function AddPacient() {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
 
   const handleSubmit = async e => {
     e.preventDefault();
     try {
       
-      await supabase.from('pacientes').insert({nombre: taskName})
+      await createPaciente(null,name);
+      navigate ("/Profesional");
       
-      setUsers(await getPacientes())
     } catch (error) {
       console.error(error);
     }
@@ -24,14 +24,14 @@ function TaskForm({setUsers}) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="taskName"
-          placeholder="Escribi el nombre de una tarea"
-          onChange={(e) => setTaskName(e.target.value)}
+          name="name"
+          placeholder="Escribi el nombre"
+          onChange={(e) => setName(e.target.value)}
         />
-        <button type="submit">Agregar</button>
+        <button type="submit">Crear Paciente</button>
       </form>
     </>
   );
 }
 
-export default TaskForm;
+export default AddPacient;
