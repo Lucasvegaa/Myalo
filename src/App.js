@@ -4,12 +4,13 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ProfilePaciente from "./pages/ProfilePaciente";
+import Profesional from "./pages/Profesional";
+import AddPacientPage from "./pages/AddPacientPage";
+import AddSessionPage from "./pages/AddSessionPage";
 
 import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { supabase } from "./supabase/client";
-import Profesional from "./pages/Profesional";
-import AddPacientPage from "./pages/AddPacientPage";
 
 function App() {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/profesional" element={<Profesional/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/paciente/:pacientId" element={<ProfilePaciente/>}/>
+        <Route path="/paciente/:pacientId/addSession" element={<AddSessionPage />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </div>

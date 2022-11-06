@@ -31,8 +31,8 @@ function Profesional() {
   //   await supabase.auth.signOut();
   // }
   
-  const HandleAddPacient = (pacient) => {
-    navigate("/AddPacient");
+  const HandleAddPacient = () => {
+    navigate("/addPacient");
   }
   return (
     <>

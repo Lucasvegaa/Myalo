@@ -1,4 +1,4 @@
-import AddPacient from "../components/AddPacient"
+import AddPacient from "../components/AddPacientForm"
 
 const AddPacientPage = ({setPaciente}) => {
   return (
