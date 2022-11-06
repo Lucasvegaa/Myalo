@@ -35,7 +35,8 @@ export const createPaciente = async (
   dni,
   email,
   direccion,
-  fechaNac
+  fechaNac,
+  apellido
 ) => {
   await supabase
     .from("pacientes")
@@ -47,6 +48,7 @@ export const createPaciente = async (
         email: email,
         direccion: direccion,
         fechaNac: fechaNac,
+        apellido: apellido
       },
     ]);
 };

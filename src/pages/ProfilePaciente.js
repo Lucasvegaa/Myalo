@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import PacientData from "../components/PacientData";
 import SessionList from "../components/SessionList";
 import ViewerHC from "../components/ViewerHC";
+import NavBar from "../components/NavBar"
 import {
   getHistoriaClinica,
   getPaciente,
@@ -41,6 +42,7 @@ function ProfilePaciente() {
 
   return (
     <>
+      <NavBar/>
       <h2>Paciente {pacientId} </h2>
       <PacientData pacient={pacient} />
       <ViewerHC historiaClinica={historiaClinica} />

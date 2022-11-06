@@ -10,8 +10,9 @@ export const PacientsList = ({ pacients, setPacients }) => {
         pacients?.map((pacient) => (
           <Col key={pacient.id}>
             <CardPacient
-            nombre={pacient.nombre}
-            id={pacient.id}
+            // nombre={pacient.nombre}
+            // id={pacient.id}
+            {...pacient}
             />
             </Col>
         ))}

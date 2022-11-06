@@ -24,7 +24,11 @@ function Profesional() {
     <>
       <NavBar/>
       <h1>Profesional</h1>
+      
+      <h2>Lista de Pacientes</h2>  
       <Button onClick={HandleAddPacient}>Agregar Paciente</Button>
+      
+      
       <PacientsList pacients= {pacients} setPacients= {setPacients}/>
     </>
 

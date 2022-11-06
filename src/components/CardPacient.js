@@ -1,7 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
-function CardPacient({nombre, id}) {
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
+function CardPacient({nombre, id, apellido, email, direccion, fechaNacimiento, patologia}) {
   
   const navigate = useNavigate();
 
@@ -9,17 +11,25 @@ function CardPacient({nombre, id}) {
     navigate(`/paciente/${pacientId}`);
   };
   
-  
   return (
-    <Card className='m-5' style={{ width: '18rem' }}>
+    <Card className='m-3' style={{ width: '18rem' }}>
+      <Row xs={1} md={2} className="g-4">
+      <Col>
+      <Card.Img className='m-2' style={{ width: '9rem' }} width="4000px" variant="bottom" src="https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/Usuario-Undefined.png" />
+      
+      </Col>
+      
+      <Col>
       <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Title>{apellido} {nombre}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
         <Card.Text>
-          ID: {id}
+          ID: {id} {direccion}
         </Card.Text>
-        <Button variant="primary" onClick={handleClick}>Ver Perfil</Button>
+        <Button variant="primary" onClick={()=>{handleClick(id)}}>Ver Perfil</Button>
       </Card.Body>
+      </Col>
+      </Row>
     </Card>
   );
 }

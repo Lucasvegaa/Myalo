@@ -7,6 +7,7 @@ import ProfilePaciente from "./pages/ProfilePaciente";
 import Profesional from "./pages/Profesional";
 import AddPacientPage from "./pages/AddPacientPage";
 import AddSessionPage from "./pages/AddSessionPage";
+import NavBar from "./components/NavBar";
 
 import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -16,12 +17,11 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    
     supabase.auth.onAuthStateChange((event, session) => {
       if (!session) {
-        navigate('/login');
+        navigate("/login");
       } else {
-        navigate('/');
+        navigate("/");
       }
     });
   }, [navigate]);
@@ -32,11 +32,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/addPacient" element={<AddPacientPage />} />
-        <Route path="/profesional" element={<Profesional/>} />
+        <Route path="/profesional" element={<Profesional />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/paciente/:pacientId" element={<ProfilePaciente/>}/>
-        <Route path="/paciente/:pacientId/addSession" element={<AddSessionPage />} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="/paciente/:pacientId" element={<ProfilePaciente />} />
+        <Route
+          path="/paciente/:pacientId/addSession"
+          element={<AddSessionPage />}
+        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
