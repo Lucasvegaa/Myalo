@@ -1,9 +1,9 @@
 import AddPacient from "../components/AddPacientForm"
 
-const AddPacientPage = ({setPaciente}) => {
+const AddPacientPage = () => {
   return (
     <>
-    <div>Crear Nuevo Paciente</div>
+    <h1>Crear Nuevo Paciente</h1>
     <AddPacient/>
     </>
   )

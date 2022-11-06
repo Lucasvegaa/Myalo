@@ -5,6 +5,8 @@ import {
   createHistoriaClinica,
 } from "../supabase/api";
 import { useNavigate } from "react-router-dom";
+import PacientForm from "./PacientForm";
+import HistoriaClinicaForm from "./HistoriaClinicaForm";
 
 function AddPacient() {
   const navigate = useNavigate();
@@ -39,6 +41,8 @@ function AddPacient() {
         />
         <button type="submit">Crear Paciente</button>
       </form>
+      <PacientForm/>
+      
     </>
   );
 }

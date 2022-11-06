@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PacientsList } from "../components/PacientsList";
 import { getPacientes } from "../supabase/api";
+import NavBar from "../components/NavBar";
+import Button from "react-bootstrap/esm/Button";
 
 function Profesional() {
   const navigate = useNavigate();
@@ -15,32 +17,15 @@ function Profesional() {
     fetchPacients();
   }, []);
 
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     const {data:{user}} = await supabase.auth.getUser()
-  //     console.log (user);
-  //     if (!user) {
-  //       navigate("/login");
-  //     }
-  //   }
-  //   getUsers();
-    
-  // }, [navigate]);
-  
-  // const signOut = async () => {
-  //   await supabase.auth.signOut();
-  // }
-  
   const HandleAddPacient = () => {
     navigate("/addPacient");
   }
   return (
     <>
+      <NavBar/>
       <h1>Profesional</h1>
-      {/* <button onClick={e =>{signOut()}}>Logout</button> */}
-      <button onClick = {HandleAddPacient} > Agregar Paciente</button>
+      <Button onClick={HandleAddPacient}>Agregar Paciente</Button>
       <PacientsList pacients= {pacients} setPacients= {setPacients}/>
-
     </>
 
   );

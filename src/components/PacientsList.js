@@ -1,34 +1,23 @@
-import { useNavigate } from "react-router-dom";
-import { deletePaciente, getPacientes } from "../supabase/api";
-
+import CardPacient from "./CardPacient";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 export const PacientsList = ({ pacients, setPacients }) => {
-  const navigate = useNavigate();
-
-  const handleClick = (pacientId) => {
-    navigate(`/paciente/${pacientId}`);
-  };
-  
-  const handleDelete = async (id) => {
-    try {
-      await deletePaciente(id);
-      setPacients(await getPacientes());
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <>
+      <Row xs={1} md={4} className="g-4">
+        
       {pacients &&
         pacients?.map((pacient) => (
-          <div key={pacient.id}> 
-            <div  >
-              Id: {pacient.id} - Nombre: {pacient.nombre}    
-              <button onClick={() => { handleClick(pacient.id);}}> Ver perfil </button>
-              <button onClick={() => {handleDelete(pacient.id);}} > Eliminar</button>
-            </div>
-          </div>
+          <Col key={pacient.id}>
+            <CardPacient
+            nombre={pacient.nombre}
+            id={pacient.id}
+            />
+            </Col>
         ))}
+        
+      </Row>
+
     </>
   );
 };
