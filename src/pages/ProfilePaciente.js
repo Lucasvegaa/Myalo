@@ -39,7 +39,7 @@ function ProfilePaciente() {
     fetchHistoriaClinica();
     fetchSesiones();
   }, [pacientId]);
-
+  
   return (
     <>
       <NavBar/>
@@ -47,7 +47,7 @@ function ProfilePaciente() {
       <PacientData pacient={pacient} />
       <ViewerHC historiaClinica={historiaClinica} />
       <SessionList sesiones={sesiones} setSesiones={setSesiones} />
-
+    
       <button
         onClick={() => {
           handleClick(pacientId);

@@ -132,7 +132,7 @@ function AddPacient() {
             </Form.Group>
 
             <Form.Group as={Col} className="mb-3" controlId="formGridAntecedentes">
-              <Form.Label>Antecedentes</Form.Label>
+              <Form.Label>Antecedentes Familiares</Form.Label>
               <Form.Control as="textarea" rows={3} onChange={(e) => setAntecedentes(e.target.value)} />
             </Form.Group>
         </Container>
