@@ -128,3 +128,8 @@ export const createSesionTerapia = async (
 export const deletePaciente = async (paciente_id) => {
   await supabase.from("pacientes").delete().eq("id", paciente_id);
 }
+
+export const getPacientesOrderById = async (profesional_id) => {
+  const response = await supabase.from("pacientes").select("*").eq('profesional_id', profesional_id).order('id', { ascending: true });
+  return response.data;
+};
