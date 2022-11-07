@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/esm/Container";
 
 function ViewerHC({ historiaClinica }) {
+  
   return (
     <>
       <Container className="mb-5">
@@ -16,7 +17,7 @@ function ViewerHC({ historiaClinica }) {
         <Container className="mb-4">
           Antecedentes:{" "}
           {historiaClinica && historiaClinica.length > 0
-            ? historiaClinica[0].antecedentes
+            ? historiaClinica[0].antecedentes_familiares
             : ""}{" "}
         </Container>
         <Container className="mb-4">
