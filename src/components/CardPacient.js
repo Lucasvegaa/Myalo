@@ -12,7 +12,7 @@ function CardPacient({nombre, id, apellido, email, direccion, fechaNacimiento, p
   };
   
   return (
-    <Card className='m-3' style={{ width: '18rem' }}>
+    <Card border="dark" className='m-3' style={{ width: '18rem' }}>
       <Row xs={1} md={2} className="g-4">
       <Col>
       <Card.Img className='m-2' style={{ width: '9rem' }} width="4000px" variant="bottom" src="https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/Usuario-Undefined.png" />

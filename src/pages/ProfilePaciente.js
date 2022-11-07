@@ -3,13 +3,17 @@ import { useParams } from "react-router-dom";
 import PacientData from "../components/PacientData";
 import SessionList from "../components/SessionList";
 import ViewerHC from "../components/ViewerHC";
-import NavBar from "../components/NavBar"
+import NavBar from "../components/NavBar";
 import {
   getHistoriaClinica,
   getPaciente,
   getSesionTerapia,
 } from "../supabase/api";
 import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/esm/Container";
+import Button from "react-bootstrap/esm/Button";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
 
 function ProfilePaciente() {
   const [pacient, setPacient] = useState(null);
@@ -39,23 +43,31 @@ function ProfilePaciente() {
     fetchHistoriaClinica();
     fetchSesiones();
   }, [pacientId]);
-  
+
   return (
     <>
-      <NavBar/>
-      <h2>Paciente {pacientId} </h2>
-      <PacientData pacient={pacient} />
-      <ViewerHC historiaClinica={historiaClinica} />
+      <NavBar />
+      <Container className="mb-5">
+        <h1>Perfil de Paciente </h1>
+      </Container>
+
+      <Row   className="justify-content-md-center">
+        <Col>
+          <PacientData as={Col} pacient={pacient} />
+        </Col>
+        <Col>
+          <ViewerHC as={Col} historiaClinica={historiaClinica} />
+        </Col>
+      </Row>
+
       <SessionList sesiones={sesiones} setSesiones={setSesiones} />
-    
-      <button
+      <Button
         onClick={() => {
           handleClick(pacientId);
         }}
       >
-        {" "}
-        Crear Sesion{" "}
-      </button>
+        Crear Sesion
+      </Button>
     </>
   );
 }

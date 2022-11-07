@@ -8,7 +8,7 @@ function ColorSchemesExample() {
     <>
       <Navbar bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand href="/home">
+          <Navbar.Brand as={Link} to="/home">
             <img
               src="../../Logotipo_Blanco.png"
               width="100"
@@ -18,8 +18,8 @@ function ColorSchemesExample() {
             />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/profesional">Profesional</Nav.Link>
+            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+            <Nav.Link as={Link} to="/profesional">Profesional</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

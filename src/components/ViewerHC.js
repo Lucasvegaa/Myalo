@@ -1,18 +1,33 @@
+import Container from "react-bootstrap/esm/Container";
 
-function ViewerHC({historiaClinica}) {
-  
-  
+function ViewerHC({ historiaClinica }) {
   return (
     <>
-    <h2>  Historia Clinica </h2>
-    <div> Patologia: {(historiaClinica && (historiaClinica.length>0))  ? historiaClinica[0].patologia : ""} </div>
-    <div> Antecedentes Familiares: {(historiaClinica && (historiaClinica.length>0))  ? historiaClinica[0].antecedentes_familiares : ""} </div>
-    <div> Psicoanamnesis: {(historiaClinica && (historiaClinica.length>0))  ? historiaClinica[0].psicoanamnesis : ""} </div>
-
-    {/* <div> Observaciones: {historiaClinica ? historiaClinica[0].observaciones : ""} </div>
-    <div> Psicoanamnesis: {historiaClinica  ? historiaClinica[0].psicoanamnesis : ""} </div> */}
+      <Container className="mb-5">
+        <h2> Historia Clinica </h2>
+      </Container>
+      <Container className="h4 text-start mb-5">
+        <Container className="mb-4">
+          Patologia:{" "}
+          {historiaClinica && historiaClinica.length > 0
+            ? historiaClinica[0].patologia
+            : ""}{" "}
+        </Container>
+        <Container className="mb-4">
+          Antecedentes:{" "}
+          {historiaClinica && historiaClinica.length > 0
+            ? historiaClinica[0].antecedentes
+            : ""}{" "}
+        </Container>
+        <Container className="mb-4">
+          Psicoanamnesis:{" "}
+          {historiaClinica && historiaClinica.length > 0
+            ? historiaClinica[0].psicoanamnesis
+            : ""}{" "}
+        </Container>
+      </Container>
     </>
-  )
+  );
 }
 
-export default ViewerHC
+export default ViewerHC;

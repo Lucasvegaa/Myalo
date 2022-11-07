@@ -1,7 +1,12 @@
-
 import { createSesionTerapia } from "../supabase/api";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import  Form  from "react-bootstrap/Form";
+import  Button  from "react-bootstrap/Button";
+import  Row  from "react-bootstrap/Row";
+import Col  from "react-bootstrap/Col";
+import  Container  from "react-bootstrap/Container";
+
 const AddSessionForm = () => {
   const navigate = useNavigate();
   const [motivo, setMotivo] = useState("");
@@ -10,26 +15,59 @@ const AddSessionForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //await createSesionTerapia("1", pacientId, motivo, evaluacion); 
-      
-      await createSesionTerapia("1", pacientId, motivo, evaluacion);     
+      //await createSesionTerapia("1", pacientId, motivo, evaluacion);
+
+      await createSesionTerapia("1", pacientId, motivo, evaluacion);
       navigate(`/paciente/${pacientId}`);
     } catch (error) {
       console.error(error);
     }
   };
-  
-  
-  
+
   return (
     <>
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="Motivo" placeholder="Motivo Sesion " onChange={(e) => setMotivo(e.target.value)} />
-      <input type="text" name="Evaluacion" placeholder="Evaluacion Sesion" onChange={(e) => setEvaluacion(e.target.value)}/>
-      <button type='submit'>Guardar</button>
-    </form>
-    </>
-  )
-}
+      {/* <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="Motivo"
+          placeholder="Motivo Sesion "
+          onChange={(e) => setMotivo(e.target.value)}
+        />
+        <input
+          type="text"
+          name="Evaluacion"
+          placeholder="Evaluacion Sesion"
+          onChange={(e) => setEvaluacion(e.target.value)}
+        />
+        <button type="submit">Guardar</button>
+      </form> */}
+      <Form onSubmit={handleSubmit} className="m-5">
+        <Container className="h4 mb-4">
+          <Form.Group as={Col} className="mb-4" controlId="formGridMotivo">
+            <Form.Label className="mb-3">Motivo</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ingrese Motivo"
+              onChange={(e) => setMotivo(e.target.value)}
+            />
+          </Form.Group>
 
-export default AddSessionForm
+          <Form.Group as={Col} className="mb-3" controlId="formGridEvaluacion">
+            <Form.Label className="mb-3">Evaluacion</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              onChange={(e) => setEvaluacion(e.target.value)}
+            />
+          </Form.Group>
+        </Container>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </>
+  );
+};
+
+export default AddSessionForm;
