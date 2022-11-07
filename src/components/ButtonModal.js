@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/esm/Container";
 import Modal from "react-bootstrap/Modal";
+import ViewerSession from "./ViewerSession";
 
 const ButtonModal = ({ sesion }) => {
   const [show, setShow] = useState(false);
@@ -20,9 +20,7 @@ const ButtonModal = ({ sesion }) => {
           <Modal.Title>Detalles de Sesion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Container>Fecha: {sesion.fecha}</Container>
-          <Container>Motivo: {sesion.motivo} </Container>
-          <Container>Evaluacion: {sesion.evaluacion}</Container>
+          <ViewerSession sesion={sesion} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
