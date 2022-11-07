@@ -20,8 +20,7 @@ function Login() {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      console.log (user);
-      if (user) {
+            if (user) {
         navigate("/");
       }
     };

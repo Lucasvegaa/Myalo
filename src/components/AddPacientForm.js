@@ -11,6 +11,8 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
+
 function AddPacient() {
   const navigate = useNavigate();
   const [nombre, setNombre] = useState("");
@@ -47,6 +49,11 @@ function AddPacient() {
         antecedentes,
         null
       );
+      setTimeout(() => {
+      <Alert key='success' variant='success'>
+          This is a success alert—check it out!
+        </Alert>
+      }, 3000);
       navigate("/Profesional");
     } catch (error) {
       console.error(error);
@@ -63,7 +70,8 @@ function AddPacient() {
               <Form.Control
                 type="text"
                 placeholder="Ingrese nombre"
-                onChange={(e) => setNombre(e.target.value)}
+                onChange={(e) => setNombre(e.target.value)
+                }
               />
             </Form.Group>
 
@@ -92,8 +100,7 @@ function AddPacient() {
               <Form.Control
                 placeholder="1234 Main St"
                 onChange={(e) => {
-                  setDireccion(e.target.value);
-                  console.log(direccion);
+                  setDireccion(e.target.value);            
                 }}
               />
             </Form.Group>
