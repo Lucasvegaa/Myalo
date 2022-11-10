@@ -1,7 +1,14 @@
 .App {
   text-align: center;
 }
-
+body{
+  background-color: #4cc8b895;
+  background: linear-gradient(90deg, #7EC8BE 30%, #3ebdacdc 60%) ; 
+  height: 100%;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +42,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+.Firulais:hover{
+  background-color: #bd643ec0;
+  cursor: pointer;
+}
+.wrapperImgCard{
+  border-right: 1px solid #000000c0; 
+}
+
+.CardBodyProfesional{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.ColCardBodyProfesional{
+  display: flex;
+  align-items: center;
 }

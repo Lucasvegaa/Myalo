@@ -49,11 +49,7 @@ function AddPacient() {
         antecedentes,
         null
       );
-      setTimeout(() => {
-      <Alert key='success' variant='success'>
-          This is a success alert—check it out!
-        </Alert>
-      }, 3000);
+
       navigate("/Profesional");
     } catch (error) {
       console.error(error);
@@ -61,8 +57,10 @@ function AddPacient() {
   };
   return (
     <>
-      <Form onSubmit={handleSubmit} className="m-5">
-        <h2>Datos del Paciente</h2>
+      <Form onSubmit={handleSubmit} className="m-5 h4">
+        <Container className="mb-5">
+          <h2>Datos del Paciente</h2>
+        </Container>
         <Container>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridNombre">
@@ -70,8 +68,7 @@ function AddPacient() {
               <Form.Control
                 type="text"
                 placeholder="Ingrese nombre"
-                onChange={(e) => setNombre(e.target.value)
-                }
+                onChange={(e) => setNombre(e.target.value)}
               />
             </Form.Group>
 
@@ -100,7 +97,7 @@ function AddPacient() {
               <Form.Control
                 placeholder="1234 Main St"
                 onChange={(e) => {
-                  setDireccion(e.target.value);            
+                  setDireccion(e.target.value);
                 }}
               />
             </Form.Group>
@@ -126,26 +123,48 @@ function AddPacient() {
         </Container>
 
         <Container>
-          <h2>Historia Clinica</h2>
-          
-            <Form.Group as={Col} className="mb-3" controlId="formGridPatologia">
-              <Form.Label>Patologia</Form.Label>
-              <Form.Control as="textarea" rows={3} onChange={(e) => setPatologia(e.target.value)} />
-            </Form.Group>
+          <Container className="my-5">
+            <h2>Historia Clinica</h2>
+          </Container>
 
-            <Form.Group as={Col} className="mb-3" controlId="formGridPsicoanamnesis">
-              <Form.Label>Psicoanamnesis</Form.Label>
-              <Form.Control as="textarea" rows={3} onChange={(e) => setPsicoanamnesis(e.target.value)} />
-            </Form.Group>
+          <Form.Group as={Col} className="mb-3" controlId="formGridPatologia">
+            <Form.Label>Patologia</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              onChange={(e) => setPatologia(e.target.value)}
+            />
+          </Form.Group>
 
-            <Form.Group as={Col} className="mb-3" controlId="formGridAntecedentes">
-              <Form.Label>Antecedentes Familiares</Form.Label>
-              <Form.Control as="textarea" rows={3} onChange={(e) => setAntecedentes(e.target.value)} />
-            </Form.Group>
+          <Form.Group
+            as={Col}
+            className="mb-3"
+            controlId="formGridPsicoanamnesis"
+          >
+            <Form.Label>Psicoanamnesis</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              onChange={(e) => setPsicoanamnesis(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group
+            as={Col}
+            className="mb-3"
+            controlId="formGridAntecedentes"
+          >
+            <Form.Label>Antecedentes Familiares</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              onChange={(e) => setAntecedentes(e.target.value)}
+            />
+          </Form.Group>
         </Container>
 
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="success" type="submit">
+          Guardar
         </Button>
       </Form>
     </>

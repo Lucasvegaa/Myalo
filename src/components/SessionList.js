@@ -41,7 +41,7 @@ function SessionList({ sesiones, setSesiones }) {
           </tr>
         </thead>
         <tbody>
-          {sesiones
+        {sesiones
             ? sesiones.map((sesion) => (
               <tr key={sesion.id}>
                   <td>{sesion.id}</td>
@@ -52,7 +52,7 @@ function SessionList({ sesiones, setSesiones }) {
                   </td>
                 </tr>
               ))
-            : ""}
+            : null}
         </tbody>
       </Table>
     </>

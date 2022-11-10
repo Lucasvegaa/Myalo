@@ -4,12 +4,13 @@ import { PacientsList } from "../components/PacientsList";
 import { getPacientes } from "../supabase/api";
 import NavBar from "../components/NavBar";
 import Button from "react-bootstrap/esm/Button";
+import styled from "styled-components";
 
 function Profesional() {
   const navigate = useNavigate();
   const [pacients, setPacients] = useState([]);
 
-  useEffect( () => {
+  useEffect(() => {
     const fetchPacients = async () => {
       const pacients = await getPacientes();
       setPacients(pacients);
@@ -19,20 +20,26 @@ function Profesional() {
 
   const HandleAddPacient = () => {
     navigate("/addPacient");
-  }
+  };
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <h1>Profesional</h1>
-      
-      <h2>Lista de Pacientes</h2>  
-      <Button onClick={HandleAddPacient}>Agregar Paciente</Button>
-      
-      
-      <PacientsList pacients= {pacients} setPacients= {setPacients}/>
-    </>
+      <Wrapper>
+        <h2>Lista de Pacientes</h2>
+        <Button className="mx-5" onClick={HandleAddPacient}>Agregar Paciente</Button>
+      </Wrapper>
 
+      <PacientsList pacients={pacients} setPacients={setPacients} />
+    </>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+`;
 
 export default Profesional;
