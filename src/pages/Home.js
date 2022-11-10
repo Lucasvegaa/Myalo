@@ -11,11 +11,11 @@ const Home = () => {
         <Container>
           <Image src="../../Logotipo_Blanco_Vertical.png" width={400} fluid className="my-5"/>
           <Texto>
-            El proyecto tiene como fin brindar acompañamiento a pacientes con
+            Esta plataforma tiene como fin brindar acompañamiento a pacientes con
             patologías de estrés, ansiedad, ataques de pánico y depresión.
             Además, será una herramienta para el profesional en donde podrá
             reflejar anotaciones de las sesiones, así como también agendar
-            turnos para sus pacientes. Es importante destacar que la plataforma
+            turnos para sus pacientes. Es importante destacar que cuenta con un chatbot
             será de utilidad en casos de emergencia, cuando una persona no tenga
             un profesional cerca, con el objetivo de disminuir sintomatologías
             de cualquiera de los padecimientos mencionados. Los pacientes y
