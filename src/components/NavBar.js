@@ -6,13 +6,15 @@ import {Link} from 'react-router-dom';
 function ColorSchemesExample() {
   return (
     <>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="light" variant="light" className="NavBar1 ">
         <Container>
-          <Navbar.Brand as={Link} to="/home">
+          <Navbar.Brand as={Link} to="/home" className='ml-5 mb-2'>
             <img
               src="../../Logotipo_Color.png"
-              width="100"
-              height="30"
+              // width="100"
+              // height="30"
+              width="130"
+              
               className="d-inline-block align-top"
               alt="Myalo"
             />

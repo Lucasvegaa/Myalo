@@ -1,14 +1,16 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
 }
-body{
-  background-color: #4cc8b895;
-  background: linear-gradient(90deg, #7EC8BE 30%, #3ebdacdc 60%) ; 
+body {
+  background-color: #4cc8b895; 
+  /* background: linear-gradient(90deg, #7EC8BE 30%, #3ebdacdc 60%) ;  */
+  /* background-image: url("https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/1-January-Artwork-by-Lotta-Nieminen-for-Google-Calendar-app.jpg"); */
+  /* background: linear-gradient(90deg, #e4e4e4 2%, #3ebdacdc 100%); */
   height: 100%;
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  background-size: 100%;
+  background-size: 80%;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -43,22 +45,65 @@ body{
     transform: rotate(360deg);
   }
 }
-.Firulais:hover{
-  background-color: #3bd4949b;
-  cursor: pointer;
-}
-.wrapperImgCard{
-  border-right: 1px solid #000000c0; 
+
+.NavBar1 {
+  height: 6rem;
+  font-size: x-large;
 }
 
-.CardBodyProfesional{
+.Firulais:hover {
+  /* background-color: #3bd4949b; */
+  background: linear-gradient(90deg, #7EC8BE 30%, #3ebdacdc 1000%);
+  cursor: pointer;
+  color: white;
+}
+
+.Firulais {
+  box-shadow: 10px 5px 5px #1a5249;
+}
+
+.wrapperImgCard {
+  border-right: 1px solid #000000c0;
+  margin: 0;
+  padding: 0;
+}
+
+.CardBodyProfesional {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
+  font-size: 1.3rem;
 }
 
-.ColCardBodyProfesional{
+.ColCardBodyProfesional {
   display: flex;
   align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.FormGroupPacient {
+  background: #57afa38a;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.TitlePage {
+/* margin-top: 2rem; */
+  background: linear-gradient(90deg, #7EC8BE 30%, #3ebdacdc 1000%);
+
+  padding: 3rem;
+  text-transform: uppercase;
+  /* background-image: url("https://cdn.discordapp.com/attachments/691483944897609728/1040026308966633553/2400-fondo-abstracto-aqua-bokeh.jpg") ; */
+  height: 10rem;
+  font: bold 3rem sans-serif;
+  color: aliceblue;
+  letter-spacing: 0.5rem;
+}
+.imgCard {
+  padding: 0.5rem;
+  width: 90%;
+  height: 90%;
 }

@@ -35,6 +35,7 @@ const WrappingHome = styled.div`
 `;
 const Texto = styled.p`
   //margin-top: 4rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 `;
 export default Home;

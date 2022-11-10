@@ -4,7 +4,8 @@ const AddPacientPage = () => {
   return (
     <>
     <NavBar />
-    <h1>Crear Nuevo Paciente</h1>
+
+    <h1 className="TitlePage">Crear Nuevo Paciente</h1>
     <AddPacient/>
     </>
   )

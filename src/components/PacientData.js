@@ -8,7 +8,6 @@ function PacientData({ pacient }) {
       <h2>Datos del paciente</h2>
       
       <Container className="h4 text-start mb-5">
-        <Container className="mb-3">Id : {pacient ? pacient[0].id : ""}</Container>
         <Container className="mb-3">Nombre: {pacient ? pacient[0].nombre : ""}</Container>
         <Container className="mb-3">Apellido : {pacient ? pacient[0].apellido : ""}</Container>
         <Container className="mb-3">DNI : {pacient ? pacient[0].dni : ""}</Container>

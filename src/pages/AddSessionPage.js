@@ -4,7 +4,7 @@ const addSesionPage = () => {
   return (
     <>
     <NavBar/>
-    <h1>Agregar Sesion</h1>
+    <h1 className="TitlePage">Agregar Sesion</h1>
     <AddSessionForm />
     
     </>

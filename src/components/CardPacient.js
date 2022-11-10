@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import Image from "react-bootstrap/Image";
 
 function CardPacient({
   nombre,
@@ -21,45 +22,28 @@ function CardPacient({
 
   return (
     <Card
-      border="dark"
-      className="Firulais m-3"
+      className="Firulais"
       onClick={() => {
         handleClick(id);
       }}
     >
-      <Row xs={1} md={2} className="g-4">
-        <Col xs={2} className="wrapperImgCard">
+      <Row xs={1} md={2} className="g-4 m-0">
+        <Col  xs={2}className="wrapperImgCard">
           <Card.Img
-            className="m-2 imgCard"
-            src="https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/Usuario-Undefined.png"
-            style={{ width: "8rem" }}
+            as={Image}
+            className=" imgCard"
+            src="https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/Isotipo_Color.png"
           />
         </Col>
 
-        <Col className="ColCardBodyProfesional" xs={2}>
+        <Col className="ColCardBodyProfesional" xs={10} >
           <Card.Body className="CardBodyProfesional">
-            <Card.Title className="CardTitleProfesional">
-              Paciente
-            </Card.Title>
-            {/* <Card.Subtitle>
-              Datos:
-            </Card.Subtitle> */}
+            <Card.Title className="CardTitleProfesional">Paciente</Card.Title>
+
             <Card.Text>
               {nombre} {apellido}
-              
             </Card.Text>
-            <Card.Text>
-              DNI: {dni}
-            </Card.Text>
-            {/* <Card.Title >
-              Apellido: {apellido} 
-            </Card.Title>
-            <Card.Title >
-              Nombre: {nombre}
-            </Card.Title>
-            <Card.Title >
-              DNI: {dni}
-            </Card.Title>             */}
+            <Card.Text>DNI: {dni}</Card.Text>
           </Card.Body>
         </Col>
       </Row>

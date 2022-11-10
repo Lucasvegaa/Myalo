@@ -24,7 +24,7 @@ function Profesional() {
   return (
     <>
       <NavBar />
-      <h1>Profesional</h1>
+      <h1 className="TitlePage">Profesional</h1>
       <Wrapper>
         <h2>Lista de Pacientes</h2>
         <Button className="mx-5" onClick={HandleAddPacient} variant="success">Agregar Paciente</Button>

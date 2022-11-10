@@ -28,7 +28,7 @@ const AddSessionForm = () => {
     <>
       <Form onSubmit={handleSubmit} className="m-5">
         <Container className="h4 mb-4">
-          <Form.Group as={Col} className="mb-4" controlId="formGridMotivo">
+          <Form.Group as={Col} className="mb-4 FormGroupPacient" controlId="formGridMotivo">
             <Form.Label className="mb-3">Motivo</Form.Label>
             <Form.Control
               type="text"
@@ -37,7 +37,7 @@ const AddSessionForm = () => {
             />
           </Form.Group>
 
-          <Form.Group as={Col} className="mb-3" controlId="formGridEvaluacion">
+          <Form.Group as={Col} className="mb-3 FormGroupPacient" controlId="formGridEvaluacion">
             <Form.Label className="mb-3">Evaluacion</Form.Label>
             <Form.Control
               as="textarea"

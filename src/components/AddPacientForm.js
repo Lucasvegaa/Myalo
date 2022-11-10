@@ -58,12 +58,12 @@ function AddPacient() {
   return (
     <>
       <Form onSubmit={handleSubmit} className="m-5 h4">
-        <Container className="mb-5">
+        <Container className="mb-5 ">
           <h2>Datos del Paciente</h2>
         </Container>
         <Container>
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridNombre">
+            <Form.Group as={Col} controlId="formGridNombre" className="FormGroupPacient">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
@@ -72,7 +72,7 @@ function AddPacient() {
               />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridApellido">
+            <Form.Group as={Col} controlId="formGridApellido" className="FormGroupPacient">
               <Form.Label>Apellido</Form.Label>
               <Form.Control
                 type="text"
@@ -83,7 +83,7 @@ function AddPacient() {
           </Row>
 
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Group as={Col} controlId="formGridEmail" className="FormGroupPacient">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
@@ -92,7 +92,7 @@ function AddPacient() {
               />
             </Form.Group>
 
-            <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
+            <Form.Group as={Col} className="mb-3 FormGroupPacient" controlId="formGridAddress1">
               <Form.Label>Direccion</Form.Label>
               <Form.Control
                 placeholder="1234 Main St"
@@ -103,7 +103,7 @@ function AddPacient() {
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} className="mb-3" controlId="formGridDateBirth">
+            <Form.Group as={Col} className="mb-3 FormGroupPacient" controlId="formGridDateBirth">
               <Form.Label>Fecha de Nacimiento</Form.Label>
               <Form.Control
                 type="date"
@@ -111,7 +111,7 @@ function AddPacient() {
                 onChange={(e) => setFechaNacimiento(e.target.value)}
               />
             </Form.Group>
-            <Form.Group as={Col} className="mb-3" controlId="formGridDni">
+            <Form.Group as={Col} className="mb-3 FormGroupPacient" controlId="formGridDni">
               <Form.Label>Dni</Form.Label>
               <Form.Control
                 type="number"
@@ -127,7 +127,7 @@ function AddPacient() {
             <h2>Historia Clinica</h2>
           </Container>
 
-          <Form.Group as={Col} className="mb-3" controlId="formGridPatologia">
+          <Form.Group as={Col} className="mb-3 FormGroupPacient" controlId="formGridPatologia">
             <Form.Label>Patologia</Form.Label>
             <Form.Control
               as="textarea"
@@ -138,7 +138,7 @@ function AddPacient() {
 
           <Form.Group
             as={Col}
-            className="mb-3"
+            className="mb-3 FormGroupPacient"
             controlId="formGridPsicoanamnesis"
           >
             <Form.Label>Psicoanamnesis</Form.Label>
@@ -151,7 +151,7 @@ function AddPacient() {
 
           <Form.Group
             as={Col}
-            className="mb-3"
+            className="mb-3 FormGroupPacient"
             controlId="formGridAntecedentes"
           >
             <Form.Label>Antecedentes Familiares</Form.Label>
