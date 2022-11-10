@@ -9,8 +9,8 @@ const Home = () => {
       <WrappingHome>
         <NavBar />
         <Container>
-          <Image src="../../Logotipo_Color_Vertical.png" width={400} fluid />
-          <p>
+          <Image src="../../Logotipo_Blanco_Vertical.png" width={400} fluid className="my-5"/>
+          <Texto>
             El proyecto tiene como fin brindar acompañamiento a pacientes con
             patologías de estrés, ansiedad, ataques de pánico y depresión.
             Además, será una herramienta para el profesional en donde podrá
@@ -20,7 +20,7 @@ const Home = () => {
             un profesional cerca, con el objetivo de disminuir sintomatologías
             de cualquiera de los padecimientos mencionados. Los pacientes y
             personas que utilicen el sistema podrán acceder de manera gratuita.
-          </p>
+          </Texto>
         </Container>
       </WrappingHome>
     </>
@@ -33,5 +33,8 @@ const WrappingHome = styled.div`
   background-position: center;
   height: 100vh;
 `;
-
+const Texto = styled.p`
+  //margin-top: 4rem;
+  font-size: 1.7rem;
+`;
 export default Home;
