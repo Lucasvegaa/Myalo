@@ -27,7 +27,7 @@ function Profesional() {
       <h1>Profesional</h1>
       <Wrapper>
         <h2>Lista de Pacientes</h2>
-        <Button className="mx-5" onClick={HandleAddPacient}>Agregar Paciente</Button>
+        <Button className="mx-5" onClick={HandleAddPacient} variant="success">Agregar Paciente</Button>
       </Wrapper>
 
       <PacientsList pacients={pacients} setPacients={setPacients} />

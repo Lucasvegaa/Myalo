@@ -62,8 +62,11 @@ function ProfilePaciente() {
 
       <SessionList sesiones={sesiones} setSesiones={setSesiones} />
       <Button
+        variant="success"
+        size="lg"
         onClick={() => {
           handleClick(pacientId);
+          
         }}
       >
         Crear Sesion

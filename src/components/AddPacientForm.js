@@ -163,7 +163,7 @@ function AddPacient() {
           </Form.Group>
         </Container>
 
-        <Button variant="success" type="submit">
+        <Button variant="success" type="submit" size="lg">
           Guardar
         </Button>
       </Form>
