@@ -47,9 +47,8 @@ function ProfilePaciente() {
   return (
     <>
       <NavBar />
-      <Container className="mb-5">
         <h1 className="TitlePage">Perfil de Paciente </h1>
-      </Container>
+      
 
       <Row   className="justify-content-md-center">
         <Col>

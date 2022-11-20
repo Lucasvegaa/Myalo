@@ -28,7 +28,7 @@ function CardPacient({
       }}
     >
       <Row xs={1} md={2} className="g-4 m-0">
-        <Col  xs={2}className="wrapperImgCard">
+        <Col xs={2} className="wrapperImgCard">
           <Card.Img
             as={Image}
             className=" imgCard"
@@ -36,7 +36,7 @@ function CardPacient({
           />
         </Col>
 
-        <Col className="ColCardBodyProfesional" xs={10} >
+        <Col className="ColCardBodyProfesional" xs={10}>
           <Card.Body className="CardBodyProfesional">
             <Card.Title className="CardTitleProfesional">Paciente</Card.Title>
 

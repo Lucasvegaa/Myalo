@@ -4,10 +4,10 @@ function ViewerHC({ historiaClinica }) {
   
   return (
     <>
-      <Container className="mb-5">
+      <Container className="mb-5 ">
         <h2> Historia Clinica </h2>
       </Container>
-      <Container className="h4 text-start mb-5">
+      <Container className="h4 text-start mb-5 FormGroupPacient">
         <Container className="mb-4">
           Patologia:{" "}
           {historiaClinica && historiaClinica.length > 0

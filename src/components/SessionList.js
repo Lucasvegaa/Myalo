@@ -2,7 +2,6 @@ import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/esm/Container";
 import ButtonModal from "./ButtonModal";
 function SessionList({ sesiones, setSesiones }) {
-  
   return (
     <>
       <Container className="mb-5">
@@ -31,30 +30,33 @@ function SessionList({ sesiones, setSesiones }) {
             ))
           : ""}
       </Row> */}
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Motivo</th>
-            <th>Fecha</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        {sesiones
-            ? sesiones.map((sesion) => (
-              <tr key={sesion.id}>
-                  <td>{sesion.id}</td>
-                  <td>{sesion.motivo}</td>
-                  <td> {sesion.fecha}</td>
-                  <td>
-                    <ButtonModal sesion= {sesion}/>
-                  </td>
-                </tr>
-              ))
-            : null}
-        </tbody>
-      </Table>
+       {(sesiones && (sesiones.length > 0))  ? (
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Motivo</th>
+                <th>Fecha</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {sesiones.map((sesion) => (
+                    <tr key={sesion.id}>
+                      <td>{sesion.id}</td>
+                      <td>{sesion.motivo}</td>
+                      <td> {sesion.fecha}</td>
+                      <td>
+                        <ButtonModal sesion={sesion} />
+                      </td>
+                    </tr>
+                  ))}
+            </tbody>
+          </Table>
+       ): (<h3>No hay sesiones</h3>)
+  }
+      
+      {}
     </>
   );
 }
