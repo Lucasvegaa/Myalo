@@ -8,14 +8,12 @@ function PacientData({ pacient }) {
       <h2>Datos del paciente</h2>
       
       <Container className="h4 text-start mb-5 FormGroupPacient">
-        <Container className="mb-3">Nombre: {pacient ? pacient[0].nombre : ""}</Container>
-        <Container className="mb-3">Apellido : {pacient ? pacient[0].apellido : ""}</Container>
-        <Container className="mb-3">DNI : {pacient ? pacient[0].dni : ""}</Container>
-        <Container className="mb-3">Email : {pacient ? pacient[0].email : ""}</Container>
-        <Container className="mb-3">Direccion : {pacient ? pacient[0].direccion : ""}</Container>
-        <Container className="mb-3">
-          Fecha de nacimiento : {pacient ? pacient[0].fechaNac : ""}
-        </Container>
+        <Container className="mb-3 wrapperPacientData"><div className="headPacientData">Nombre:</div> {pacient ? pacient[0].nombre : ""}</Container>
+        <Container className="mb-3 wrapperPacientData"><div className="headPacientData">Apellido:</div> {pacient ? pacient[0].apellido : ""}</Container>
+        <Container className="mb-3 wrapperPacientData"><div className="headPacientData">DNI:</div> {pacient ? pacient[0].dni : ""}</Container>
+        <Container className="mb-3 wrapperPacientData"><div className="headPacientData">Email:</div> {pacient ? pacient[0].email : ""}</Container>
+        <Container className="mb-3 wrapperPacientData"><div className="headPacientData">Direccion:</div> {pacient ? pacient[0].direccion : ""}</Container>
+        <Container className="mb-3 wrapperPacientData"><div className="headPacientData">Fecha de nacimiento:</div> {pacient ? pacient[0].fechaNac : ""}</Container>
       </Container>
 
       <Form>

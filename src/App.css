@@ -3,6 +3,7 @@
   font-family: sans-serif;
 }
 body {
+  /* background-image: url("https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/Fondo_web_head.jpg"); */
   background-color: #4cc8b895; 
   /* background: linear-gradient(90deg, #7EC8BE 30%, #3ebdacdc 60%) ;  */
   /* background-image: url("https://tntznoptdkklgiuzcfzx.supabase.co/storage/v1/object/public/img/1-January-Artwork-by-Lotta-Nieminen-for-Google-Calendar-app.jpg"); */
@@ -106,4 +107,20 @@ body {
   padding: 0.5rem;
   width: 90%;
   height: 90%;
+}
+
+.CardTitleProfesional{
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.wrapperPacientData{
+  display: flex;
+  
+}
+.headPacientData{
+  font-weight: bold;
+  margin-right: 0.5rem;
+  
 }
