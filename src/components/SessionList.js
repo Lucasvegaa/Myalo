@@ -30,32 +30,31 @@ function SessionList({ sesiones, setSesiones }) {
             ))
           : ""}
       </Row> */}
-       {(sesiones && (sesiones.length > 0))  ? (
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Motivo</th>
-                <th>Fecha</th>
-                <th></th>
+      {sesiones && sesiones.length > 0 ? (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Motivo</th>
+              <th>Fecha</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {sesiones.map((sesion) => (
+              <tr key={sesion.id}>
+                <td>{sesion.motivo}</td>
+                <td> {sesion.fecha}</td>
+                <td>
+                  <ButtonModal sesion={sesion} />
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {sesiones.map((sesion) => (
-                    <tr key={sesion.id}>
-                      <td>{sesion.id}</td>
-                      <td>{sesion.motivo}</td>
-                      <td> {sesion.fecha}</td>
-                      <td>
-                        <ButtonModal sesion={sesion} />
-                      </td>
-                    </tr>
-                  ))}
-            </tbody>
-          </Table>
-       ): (<h3>No hay sesiones</h3>)
-  }
-      
+            ))}
+          </tbody>
+        </Table>
+      ) : (
+        <h3>No hay sesiones</h3>
+      )}
+
       {}
     </>
   );
