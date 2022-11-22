@@ -25,8 +25,9 @@ function AddPacient() {
   const [psicoanamnesis, setPsicoanamnesis] = useState("");
   const [antecedentes, setAntecedentes] = useState("");
 
-  const arrayHistoriaClinica = ["Patologia", "Psicoanamnesis", "Antecedentes"];
+  // const arrayHistoriaClinica = ["Patologia", "Psicoanamnesis", "Antecedentes"];
   const handleSubmit = async (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -55,7 +56,6 @@ function AddPacient() {
           antecedentes,
           null
         );
-
         navigate("/Profesional");
       } catch (error) {
         console.error(error);
@@ -66,7 +66,7 @@ function AddPacient() {
   return (
     <>
       <Form
-        noValidate
+        //noValidate
         validated={validated}
         onSubmit={handleSubmit}
         className="m-5 h4"
@@ -188,7 +188,7 @@ function AddPacient() {
             <h2>Historia Clinica</h2>
           </Container>
 
-          {arrayHistoriaClinica.map((item) => (
+          {/* {arrayHistoriaClinica.map((item) => (
             <Form.Group
               as={Col}
               className="mb-3 FormGroupPacient"
@@ -206,9 +206,9 @@ function AddPacient() {
                 Complete este campo
               </Form.Control.Feedback>
             </Form.Group>
-          ))}
+          ))} */}
 
-          {/* <Form.Group
+          <Form.Group
             as={Col}
             className="mb-3 FormGroupPacient"
             controlId="formGridPatologia"
@@ -257,7 +257,7 @@ function AddPacient() {
             <Form.Control.Feedback type="invalid">
               Complete este campo
             </Form.Control.Feedback>
-          </Form.Group> */}
+          </Form.Group>
         </Container>
 
         <Button variant="success" type="submit" size="lg">
